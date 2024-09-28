@@ -18,7 +18,7 @@ def converter_view(request):
         if decimal_number:
             result_roman = RomanNumerals.to_roman(int(decimal_number))
 
-    return render(request, 'conversor/converter.html', {
+    return render(request, 'conversor/convertidor.html', {
         'result_decimal': result_decimal,
         'result_roman': result_roman,
     })
