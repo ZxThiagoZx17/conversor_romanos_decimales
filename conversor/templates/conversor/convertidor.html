@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Números Romanos</title>
+</head>
+<body>
+    <h1>Conversor de Números Romanos a Decimales</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="roman_number">Número Romano:</label>
+        <input type="text" id="roman_number" name="roman_number">
+        
+        <label for="decimal_number">Número Decimal:</label>
+        <input type="number" id="decimal_number" name="decimal_number">
+        
+        <button type="submit">Convertir</button>
+    </form>
+
+    {% if result_decimal is not None %}
+        <h2>Resultado Decimal: {{ result_decimal }}</h2>
+    {% endif %}
+    
+    {% if result_roman is not None %}
+        <h2>Resultado Romano: {{ result_roman }}</h2>
+    {% endif %}
+</body>
+</html>
