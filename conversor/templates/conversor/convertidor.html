@@ -32,17 +32,26 @@
         {% csrf_token %}
         <div class="mb-3">
           <label for="roman_number" class="form-label">Numero Romano a decimal</label>
-          <input type="text" class="form-control" id="roman_number" aria-describedby="descripcion_conversor_romano">
-          <div id="descripcion_conversor_romano" class="form-text">Usa este campo si quieres convertir de romano a decimal</div>
+          <input type="text" class="form-control" id="roman_number" name="roman_number" aria-describedby="descripcion_conversor_romano" placeholder="Numero romano">
+          <!-- <div id="descripcion_conversor_romano" class="form-text">Usa este campo si quieres convertir de romano a decimal</div> -->
         </div>
 
         <div class="mb-3">
           <label for="decimal_number" class="form-label">Numero Decimal a romano</label>
-          <input type="text" class="form-control" id="decimal_number" aria-describedby="descripcion_conversor_decimal">
-          <div id="descripcion_conversor_decimal" class="form-text">Usa este campo si quieres convertir de decimal a romano</div>
+          <input type="text" class="form-control" id="decimal_number" name="decimal_number" aria-describedby="descripcion_conversor_decimal" placeholder="Numero decimal">
+          <!-- <div id="descripcion_conversor_decimal" class="form-text">Usa este campo si quieres convertir de decimal a romano</div> -->
         </div>
 
         <button type="submit" class="btn btn-primary">Convertir</button>
       </form>
+
+    {% if result_decimal is not None %}
+        <h2 class="text-center">Resultado Decimal: {{ result_decimal }}</h2>
+    {% endif %}
+    
+    {% if result_roman is not None %}
+        <h2 class="text-center">Resultado Romano: {{ result_roman }}</h2>
+    {% endif %}
+
 </body>
 </html>
