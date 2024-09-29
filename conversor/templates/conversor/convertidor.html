@@ -46,11 +46,13 @@
       </form>
 
     {% if result_decimal is not None %}
-        <h2 class="text-center">Resultado Decimal: {{ result_decimal }}</h2>
+        <!-- <h2 class="text-center">Resultado Decimal: {{ result_decimal }}</h2> -->
+        <div class="badge text-bg-primary">Resultado Decimal: {{ result_decimal }}</div>
     {% endif %}
     
     {% if result_roman is not None %}
-        <h2 class="text-center">Resultado Romano: {{ result_roman }}</h2>
+        <!-- <h2 class="text-center">Resultado Romano: {{ result_roman }}</h2> -->
+        <div class="badge text-bg-primary">Resultado Romano: {{ result_roman }}</div>
     {% endif %}
 
 </body>
